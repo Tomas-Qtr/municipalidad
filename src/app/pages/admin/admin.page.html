@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button id="open-modal" expand="block">Añadir sedes</ion-button>
+  
+  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Welcome</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <form [formGroup]="nuevasSedes">
+          <ion-item class="item">
+            <ion-label position="floating">Ingrese el nombre </ion-label>
+            <ion-input placeholder="nombre de la sede" formControlName="nombre"></ion-input>
+          </ion-item>
+          
+          <ion-item class="item">
+            <ion-label position="floating">Ingrese la descripcion </ion-label>
+            <ion-input placeholder="descripcion de la sede" formControlName="descripcion"></ion-input>
+          </ion-item>
+          <ion-item class="item">
+            <ion-label position="floating">Ingrese la ubicacion </ion-label>
+            <ion-input placeholder="ubicacion de la sede" formControlName="ubicacion"></ion-input>
+          </ion-item>
+          
+          <ion-item class="item">
+            <ion-label position="floating">Ingrese el telefono </ion-label>
+            <ion-input placeholder="telefono de la sede" formControlName="telefono"></ion-input>
+          </ion-item>
+            
+          <ion-item class="item">
+            <ion-label position="floating">Ingrese la imagen </ion-label>
+            <!-- esto lo hacemo en el storage despues por a hora es URL-->
+            <ion-input placeholder="Imagen URL de la sede" formControlName="imagen"></ion-input>
+          </ion-item>
+        </form>
+          
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+ 
+
+ 
+   
+</ion-content>
