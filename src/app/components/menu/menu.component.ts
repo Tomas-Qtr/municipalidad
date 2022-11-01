@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-menu',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   constructor() { }
+  
+  @Input() tituloMenu:string
+
   title:string;
+
   ngOnInit() {}
 
 }

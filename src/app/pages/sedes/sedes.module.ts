@@ -9,6 +9,8 @@ import { AngularFireModule} from '@angular/fire/compat';
 import { SedesPage } from './sedes.page';
 import { environment } from 'src/environments/environment';
 import { SedesService } from 'src/app/servicios/sedes.service';
+import { MenuComponent } from 'src/app/components/menu/menu.component';
+import { AppComponent } from 'src/app/app.component';
 
 
 @NgModule({
@@ -19,7 +21,7 @@ import { SedesService } from 'src/app/servicios/sedes.service';
     SedesPageRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  declarations: [SedesPage],
+  declarations: [SedesPage, MenuComponent, AppComponent],
   providers:[SedesService]
 })
 export class SedesPageModule {}

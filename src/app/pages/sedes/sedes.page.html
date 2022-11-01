@@ -1,12 +1,9 @@
 <!-- pagina donde vamos a mostrar las sedes con sus atributos -->
 
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Sedes</ion-title>
-  </ion-toolbar>
+  <!--LLamamos al "menu.component" donde nos comunicamos para cambiar el titulo-->
+  <!--Si podemos tendriamos que cambiar que por el titulo se muestre el icono de la pagina-->
+  <app-menu  [tituloMenu]="titulo"></app-menu>
 </ion-header>
 
 <ion-content [fullscreen]="true">

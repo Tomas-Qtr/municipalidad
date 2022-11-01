@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+
 import { SedesService } from 'src/app/servicios/sedes.service';
 import {Sede} from '../../modelos/sede';
 
@@ -10,6 +12,12 @@ import {Sede} from '../../modelos/sede';
 export class SedesPage implements OnInit {
 
   sedes:Sede[]
+
+  titulo:string="Sede"
+
+  
+
+  
   constructor(private sedesSevicio:SedesService) { }
 
   ngOnInit() { //Traemos las sedes y las guardamos en una variable
