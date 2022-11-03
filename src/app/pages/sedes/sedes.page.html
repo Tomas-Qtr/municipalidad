@@ -3,14 +3,58 @@
 <ion-header>
   <!--LLamamos al "menu.component" donde nos comunicamos para cambiar el titulo-->
   <!--Si podemos tendriamos que cambiar que por el titulo se muestre el icono de la pagina-->
-  <app-menu  [tituloMenu]="titulo"></app-menu>
+  <app-menu  [tituloMenu]="titulo" [icono]="icono"></app-menu>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-slides pager="false" [options]="slideOpts">
+          <ion-slide *ngFor="let sede of sedes">
+            <ion-card>
+              <img [src]="sede.imagen" alt="Sedes">
+              <ion-card-header>
+                <ion-card-title>{{sede.nombre}}</ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>
+                {{sede.descripcion}}
+              </ion-card-content>
 
-  <div id="container">
-    <!--recooremos la colecciones de la base de datos-->
+
+              
+              <ion-grid>
+                <ion-row class="ion-justify-content-start">
+                  <ion-col size="2">
+                    <ion-icon name="call-outline"></ion-icon>
+                  </ion-col>
+                  <ion-col size="10">
+                    <ion-label>{{sede.telefono}}</ion-label>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="2">
+                    <ion-icon name="location-outline"></ion-icon>
+                  </ion-col>
+                  <ion-col size="10">
+                    <ion-label>{{sede.ubicacion}}</ion-label>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+ <!--  <div id="container">
+    
     <ion-card *ngFor="let sede of sedes">
       <ion-card-header>
         <ion-card-title>{{sede.nombre}}</ion-card-title>
@@ -21,5 +65,5 @@
        {{sede.descripcion}}
       </ion-card-content>
     </ion-card>
-  </div>
+  </div> -->
 </ion-content>

@@ -15,7 +15,7 @@ export class SedesPage implements OnInit {
 
   titulo:string="Sede"
 
-  
+  icono:string="business-outline"
 
   
   constructor(private sedesSevicio:SedesService) { }

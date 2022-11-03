@@ -11,7 +11,9 @@ export class MenuComponent implements OnInit {
   constructor() { }
   
   @Input() tituloMenu:string
+  @Input() icono:string
 
+  icon:string=""
   title:string;
 
   ngOnInit() {}

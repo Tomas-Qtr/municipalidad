@@ -1,9 +1,20 @@
 <ion-header>
    <!--LLamamos al "menu.component" donde nos comunicamos para cambiar el titulo-->
   <!--Si podemos tendriamos que cambiar que por el titulo se muestre el icono de la pagina-->
-  <app-menu  [tituloMenu]="titulo"></app-menu>
+  <app-menu  [tituloMenu]="titulo" [icono]="icono"></app-menu>
 </ion-header>
 
 <ion-content>
  
+  
+  <ion-button class="carta" expand="block" *ngFor="let p of appPages;" routerLinkActive="selected" >
+    <div>
+      <div class="seccion" [routerLink]="[p.url]">
+        <h4 class="boton-text">{{p.title}}</h4>
+        <ion-icon slot="end" class="boton-icon" [name]="p.icon"></ion-icon>
+      </div>
+    </div>
+  </ion-button>
+
+
 </ion-content>
